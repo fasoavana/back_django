@@ -7,7 +7,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --only-binary=:all: -r requirements.txt \
     && python -m pip uninstall -y pip setuptools wheel
 RUN addgroup -S app && adduser -S -G app app
-COPY --chown=app:app . .
+COPY manage.py ./
+COPY valaproject/__init__.py valaproject/settings.py valaproject/urls.py valaproject/wsgi.py ./valaproject/
 RUN chown app:app /app
 USER app
 EXPOSE 8000
