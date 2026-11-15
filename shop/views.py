@@ -298,7 +298,7 @@ class OrderViewSet(viewsets.GenericViewSet):
                     if order.status=='attente_acompte':order.status='acompte_recu'
                 order.payment_status=new_payment
             if new_status is not None:
-                if new_status not in dict(Order.STATUS):raise ValidationError({'status':'Statut invalide.'})
+                if new_status not in dict(Order.STATUS_CHOICES):raise ValidationError({'status':'Statut invalide.'})
                 if new_status not in ['attente_acompte','annulee'] and order.payment_status!='verifie':
                     raise ValidationError('Le paiement doit être vérifié avant la préparation.')
                 order.status=new_status

@@ -60,11 +60,11 @@ class ProductImage(models.Model):
         return result
 
 class ProductVariant(models.Model):
-    STATUS = [('sur_commande','Sur commande'),('en_stock','En stock'),('indisponible','Indisponible')]
+    STATUS_CHOICES = [('sur_commande','Sur commande'),('en_stock','En stock'),('indisponible','Indisponible')]
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='variants')
     phone_model = models.ForeignKey(PhoneModel, on_delete=models.PROTECT, null=True, blank=True)
     color = models.CharField(max_length=50, default='Selon photo')
-    status = models.CharField(max_length=16, choices=STATUS, default='sur_commande')
+    status = models.CharField(max_length=16, choices=STATUS_CHOICES, default='sur_commande')
     stock_count = models.PositiveIntegerField(default=0)
     class Meta: constraints = [models.UniqueConstraint(fields=['product','phone_model','color'],name='unique_phone_color_variant')]
     def __str__(self):return f'{self.product} — {self.phone_model or "Sans téléphone"}'
@@ -79,7 +79,7 @@ class CustomerArtwork(models.Model):
 class Order(models.Model):
     SOURCES = [('web','Site web'),('facebook','Facebook')]
     ZONES = [('tana','Antananarivo'),('province','Province')]
-    STATUS = [('attente_acompte','En attente du paiement'),('acompte_recu','Paiement confirmé'),
+    STATUS_CHOICES = [('attente_acompte','En attente du paiement'),('acompte_recu','Paiement confirmé'),
               ('preparation','En préparation'),('prete','Prête'),('expediee','Expédiée'),
               ('livree','Livrée'),('annulee','Annulée')]
     PAYMENTS = [('en_attente','En attente'),('declare','Déclaré par le client'),('verifie','Vérifié'),('rejete','Rejeté')]
@@ -101,7 +101,7 @@ class Order(models.Model):
     payment_phone = models.CharField(max_length=30, blank=True)
     transaction_reference = models.CharField(max_length=120, blank=True)
     payment_status = models.CharField(max_length=12, choices=PAYMENTS, default='en_attente')
-    status = models.CharField(max_length=20, choices=STATUS, default='attente_acompte')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='attente_acompte')
     notes = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

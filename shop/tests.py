@@ -22,7 +22,23 @@ class StoreOrderTests(APITestCase):
         self.assertEqual(r.data['status'],'attente_acompte')
         tracking=r.data['tracking_token']
         self.assertEqual(self.client.get(f'/api/v1/track/{tracking}/').status_code,200)
-        self.assertEqual(self.client.get('/api/v1/orders/').status_code,403)
+        self.assertEqual(self.client.get('/api/v1/orders/').status_code,401)
+
+        # Un utilisateur authentifié non administrateur doit être refusé.
+        regular_user = User.objects.create_user(
+            username='client@test.test',
+            password='client-test-password'
+        )
+        self.client.force_authenticate(regular_user)
+
+        self.assertEqual(
+            self.client.get('/api/v1/orders/').status_code,
+            403
+        )
+
+        # Réinitialiser l'authentification avant le test administrateur.
+        self.client.force_authenticate(user=None)
+
         staff=User.objects.create_user(username='admin@test.test',password='strong-pass',is_staff=True)
         self.client.force_authenticate(staff)
         order=Order.objects.get(reference=r.data['reference'])
