@@ -1,0 +1,134 @@
+[
+  {
+    "ref": "P10-104",
+    "slug": "papillons-chromes",
+    "name": "Papillons chromés",
+    "kind": "luxe",
+    "price": 42000,
+    "cover_url": "/catalog/papillons-chromes.webp",
+    "phone": "realme V20 (1)",
+    "zip": "housses_part010.zip",
+    "zip_path": "realme V20 (1)/1740622411994-1550002120 (1).jpg"
+  },
+  {
+    "ref": "P4-133",
+    "slug": "leopard-coeur",
+    "name": "Léopard & cœur doré",
+    "kind": "luxe",
+    "price": 42000,
+    "cover_url": "/catalog/leopard-coeur.webp",
+    "phone": "Samsung s23 ultra",
+    "zip": "housses_part004.zip",
+    "zip_path": "Samsung s23 ultra/1772903340948--288525785.jpg"
+  },
+  {
+    "ref": "P7-016",
+    "slug": "papillons-argentes",
+    "name": "Papillons argentés",
+    "kind": "bijoux",
+    "price": 38000,
+    "cover_url": "/catalog/papillons-argentes.webp",
+    "phone": "iphone 13 pro max",
+    "zip": "housses_part007.zip",
+    "zip_path": "iphone 13 pro max/1739376662073-1924969465.jpg"
+  },
+  {
+    "ref": "P9-070",
+    "slug": "coeur-miroir",
+    "name": "Cœur miroir argenté",
+    "kind": "bijoux",
+    "price": 38000,
+    "cover_url": "/catalog/coeur-miroir.webp",
+    "phone": "oppo reno 3 pro",
+    "zip": "housses_part009.zip",
+    "zip_path": "oppo reno 3 pro/1769186959891-32700647.jpg"
+  },
+  {
+    "ref": "P6-013",
+    "slug": "leopard-dore",
+    "name": "Léopard doré",
+    "kind": "luxe",
+    "price": 40000,
+    "cover_url": "/catalog/leopard-dore.webp",
+    "phone": "honor magic 4 pro",
+    "zip": "housses_part006.zip",
+    "zip_path": "honor magic 4 pro/1763891745635--572418558.jpg"
+  },
+  {
+    "ref": "P8-188",
+    "slug": "papillon-rose",
+    "name": "Papillon rose scintillant",
+    "kind": "diamant",
+    "price": 50000,
+    "cover_url": "/catalog/papillon-rose.webp",
+    "phone": "oppo a93",
+    "zip": "housses_part008.zip",
+    "zip_path": "oppo a93/1767760623053--1172588934.jpg"
+  },
+  {
+    "ref": "P10-023",
+    "slug": "cristaux-roses",
+    "name": "Cristaux roses",
+    "kind": "diamant",
+    "price": 50000,
+    "cover_url": "/catalog/cristaux-roses.webp",
+    "phone": "realme 13 Pro",
+    "zip": "housses_part010.zip",
+    "zip_path": "realme 13 Pro/1778059134321--166350298.jpg"
+  },
+  {
+    "ref": "15-040",
+    "slug": "papillon-noir-argent",
+    "name": "Papillon noir et argent",
+    "kind": "luxe",
+    "price": 42000,
+    "cover_url": "/catalog/papillon-noir-argent.webp",
+    "phone": "xiaomi cc9 Pro",
+    "zip": "housses_part015.zip",
+    "zip_path": "xiaomi cc9 Pro/1762943202161-966620894.jpg"
+  },
+  {
+    "ref": "12-192",
+    "slug": "papillons-nacres",
+    "name": "Papillons nacrés",
+    "kind": "luxe",
+    "price": 40000,
+    "cover_url": "/catalog/papillons-nacres.webp",
+    "phone": "redmi k30 ultra",
+    "zip": "housses_part012.zip",
+    "zip_path": "redmi k30 ultra/1765179381721--1055425550.jpg"
+  },
+  {
+    "ref": "14-105",
+    "slug": "papillon-noir",
+    "name": "Papillon noir pailleté",
+    "kind": "diamant",
+    "price": 50000,
+    "cover_url": "/catalog/papillon-noir.webp",
+    "phone": "vivo y17",
+    "zip": "housses_part014.zip",
+    "zip_path": "vivo y17/1742060519266--1240700824.jpg"
+  },
+  {
+    "ref": "11-026",
+    "slug": "papillon-bijoux",
+    "name": "Papillon & bijoux",
+    "kind": "bijoux",
+    "price": 38000,
+    "cover_url": "/catalog/papillon-bijoux.webp",
+    "phone": "redmi 15",
+    "zip": "housses_part011.zip",
+    "zip_path": "redmi 15/1763311283248-1675706774.jpg"
+  },
+  {
+    "ref": "13-209",
+    "slug": "papillons-3d",
+    "name": "Papillons roses 3D",
+    "kind": "luxe",
+    "price": 40000,
+    "cover_url": "/catalog/papillons-3d.webp",
+    "phone": "tecno spark 10 pro",
+    "zip": "housses_part013.zip",
+    "zip_path": "tecno spark 10 pro/1763276724554--1450558452.jpg"
+  }
+]
