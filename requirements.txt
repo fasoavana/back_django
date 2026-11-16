@@ -4,7 +4,11 @@ djangorestframework-simplejwt>=5.4,<6
 django-cors-headers>=4.7,<5
 dj-database-url>=2.3,<4
 psycopg2-binary>=2.9,<3
-Pillow>=11.0,<13
+Pillow>=13.0,<14
+certifi>=2026.10.18
+msgpack>=1.2.3
+setuptools>=78.1.1
+urllib3>=2.8.0
 gunicorn>=22,<25
 whitenoise>=6.8,<7
 
