@@ -67,7 +67,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Use external S3-compatible storage (e.g. MinIO or S3) for real orders/photos.
 MEDIA_STORAGE = os.environ.get('MEDIA_STORAGE', 'local').lower()
 if os.environ.get('VALADEPLOY_MODE') == '1' and not DEBUG and MEDIA_STORAGE != 's3':
-    raise RuntimeError('Production ValaDeploy: MEDIA_STORAGE=s3 obligatoire pour conserver les photos.')
+    # Le mode local n'est autorisé que si ValaDeploy monte le volume nommé.
+    # Le lanceur Docker vérifie physiquement le montage avant migrations.
+    if not (MEDIA_STORAGE == 'local' and os.environ.get('VALADEPLOY_LOCAL_MEDIA_VOLUME') == '1'):
+        raise RuntimeError('Production ValaDeploy: médias persistants S3 ou volume local requis.')
 STORAGES = {
     'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'},
     'staticfiles': {'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage'},

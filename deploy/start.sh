@@ -1,5 +1,21 @@
 #!/bin/sh
 set -eu
+# Ne jamais lancer migrate ni Gunicorn si les photos seraient éphémères.
+if [ "${VALADEPLOY_MODE:-0}" = "1" ] && [ "${MEDIA_STORAGE:-}" = "local" ]; then
+  [ "${VALADEPLOY_LOCAL_MEDIA_VOLUME:-0}" = "1" ] || {
+    echo 'Volume média local non autorisé' >&2; exit 72;
+  }
+  python - <<'PYMEDIA'
+import os
+import tempfile
+root = '/app/media'
+if not os.path.ismount(root):
+    raise SystemExit('Volume média absent : démarrage refusé AVANT migration')
+with tempfile.NamedTemporaryFile(prefix='.na-media-check-', dir=root, delete=True) as handle:
+    handle.write(b'volume-access-ok')
+    handle.flush()
+PYMEDIA
+fi
 python /app/deploy/wait_for_db.py
 python /app/manage.py migrate --noinput
 python /app/manage.py collectstatic --noinput
